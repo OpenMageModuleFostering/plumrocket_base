@@ -26,7 +26,8 @@ class Plumrocket_Base_Block_System_Config_Form_Field extends Mage_Adminhtml_Bloc
     {
         $product = Mage::getModel('plumbase/product')->loadByPref(str_replace('_general_serial', '',  $element->getHtmlId()));
         if ($product->isInStock()) {
-            $oldDesign = (version_compare('1.7.0', Mage::getVersion()) >= 0 && !Mage::getConfig()->getModuleConfig('Ent'.'er'.'prise_Checkout') && !Mage::getConfig()->getModuleConfig('Ent'.'er'.'prise_Checkout'));
+            $ise = Mage::getConfig()->getModuleConfig('Ent'.'er'.'prise_Checkout') && Mage::getConfig()->getModuleConfig('Ent'.'er'.'prise_Checkout');
+            $oldDesign = (version_compare('1.7.0', Mage::getVersion()) >= 0 && !$ise) || (version_compare('1.12.2', Mage::getVersion()) >= 0 && $ise);
 
             $src = 'images/success_msg_icon.gif';
             $title = implode('', array_map('ch'.'r', explode('.','84.104.97.110.107.32.121.111.117.33.32.89.111.117.114.32.115.101.114.105.97.108.32.107.101.121.32.105.115.32.97.99.99.101.112.116.101.100.46.32.89.111.117.32.99.97.110.32.115.116.97.114.116.32.117.115.105.110.103.32.101.120.116.101.110.115.105.111.110.46')));
