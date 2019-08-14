@@ -40,7 +40,20 @@ class Plumrocket_Base_Model_Feed extends Mage_AdminNotification_Model_Feed
 			$this->_feedUrl .= 'index/';
 		}
 
-        return $this->_feedUrl . 'domain/' . urlencode($domain);
+		$url = $this->_feedUrl . 'domain/' . urlencode($domain);
+
+		$modulesParams = array();
+		$plumrocketModules = Mage::helper('plumbase')->getAllPlumrocketModules();
+		foreach($plumrocketModules as $key => $module) {
+			$key = str_replace('Plumrocket_', '', $key);
+			$modulesParams[] = $key . ( ($module->version) ? ','.$module->version : '' );
+		}
+
+		if (count($modulesParams)) {
+			$url .= '/modules/'.base64_encode(implode(';', $modulesParams));
+		}
+
+        return $url;
     }
 
     public function checkUpdate()
@@ -73,7 +86,7 @@ class Plumrocket_Base_Model_Feed extends Mage_AdminNotification_Model_Feed
 			}
 			$this->setLastUpdate();
 			return $this;
-		} catch (Exception $E) {
+		} catch (Exception $e) {
 			return false;
 		}
     }

@@ -26,5 +26,21 @@ class Plumrocket_Base_Helper_Data extends Mage_Core_Helper_Abstract
 			&& ($module->is('active', 'true')) 
 			&& !Mage::getStoreConfig('advanced/modules_disable_output/Mage_AdminNotification'));
 	}
+
+
+	public function getAllPlumrocketModules()
+	{
+		$modules = (array)Mage::getConfig()->getNode('modules')->children();
+		
+		$result = array();
+		foreach($modules as $key => $module) {
+			if ( strpos($key, 'Plumrocket_') !== false && $module->is('active')) {
+				$result[$key] = $module;
+			}
+		}
+		 
+		return $result;
+	}
+
 }
 	 

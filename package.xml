@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>Plumrocket_Base</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <stability>stable</stability>
     <license uri="http://wiki.plumrocket.net/wiki/EULA">End-user License Agreement</license>
     <channel>community</channel>
@@ -11,9 +11,9 @@
 It will notify you about the new changes, fixes and updates using notifications popup at your magento backend and will let you be on track with the recent modifications.</description>
     <notes>Minor fixes</notes>
     <authors><author><name>Plumrocket Team</name><user>plumrocket</user><email>support@plumrocket.com</email></author></authors>
-    <date>2014-07-09</date>
-    <time>11:00:44</time>
-    <contents><target name="magecommunity"><dir name="Plumrocket"><dir name="Base"><dir name="Helper"><file name="Data.php" hash="9e534ce8140731b96a0257a0a25060a7"/></dir><dir name="Model"><file name="Feed.php" hash="7412a21e6d1edd226fce19f3609de602"/></dir><dir name="etc"><file name="config.xml" hash="f01dda8545a580cfbe6d723cf5490def"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Plumrocket_Base.xml" hash="a168acb7d8c05758401655a26857ff50"/></dir></target></contents>
+    <date>2014-09-23</date>
+    <time>12:00:47</time>
+    <contents><target name="magecommunity"><dir name="Plumrocket"><dir name="Base"><dir name="Helper"><file name="Data.php" hash="413017647939cbbe66613f4a2ba92d12"/></dir><dir name="Model"><file name="Feed.php" hash="819cc8d8ebd053da6a88411811251d43"/></dir><dir name="etc"><file name="config.xml" hash="47e4b3e555aca66c7776803ef6a041fd"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Plumrocket_Base.xml" hash="75a7ef67d843b1d4e6f4b73aa6491d71"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
